@@ -1,0 +1,480 @@
+/* Back Button */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white; /* Default text color */
+  background: linear-gradient(45deg, #ff69b4, #ff1493);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease, color 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4);
+  -webkit-animation: romantic-button 7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: romantic-button 7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes romantic-button {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes romantic-button {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Hover Effects */
+.back-button:hover {
+  box-shadow: 0 0 20px #ff1493, 0 0 40px #ff69b4;
+  transform: scale(1.05);
+  color: #fffacd; /* New text color on hover */
+}
+
+/* Gradient Shine */
+.back-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  transform: skewX(-20deg);
+  transition: left 0.75s ease;
+  pointer-events: none;
+}
+
+.back-button:hover::before {
+  left: 150%;
+}
+
+/* Heart Pulse on Click */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.back-button:active {
+  animation: pulse 0.5s ease-in-out;
+}
+
+.back-button:hover::after {
+  bottom: 30px;
+  opacity: 1;
+}
+
+/* General Page Layout */
+body {
+  background-color: #ffffff;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.container-1{
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.romantic-button {
+  position: relative;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: white;
+  background: linear-gradient(45deg, #ff69b4, #ff1493);
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease, color 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(255, 20, 147, 0.4);
+  animation: romantic-button 7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.romantic-button:hover {
+  box-shadow: 0 0 25px #ff1493, 0 0 50px #ff69b4;
+  transform: scale(1.05);
+  color: #fffacd;
+}
+
+.romantic-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  transform: skewX(-20deg);
+  transition: left 0.75s ease;
+  pointer-events: none;
+}
+
+.romantic-button:hover::before {
+  left: 150%;
+}
+
+.romantic-button:active {
+  animation: pulse 0.5s ease-in-out;
+}
+
+.button-row {
+  display: flex;
+  gap: 30px; /* More spacing between buttons */
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.text-box {
+  width: max-content;
+  min-width: 600px; /* Adjust based on button row width */
+  padding: 20px;
+  background: rgba(255, 182, 193, 0.2);
+  border: 1px solid #ff69b4;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0 auto;
+}
+
+
+/* Flower Bouquet */
+.bouquet {
+  position: relative;
+  width: 120px;
+  height: 200px;
+  margin: 0 auto;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.flower {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  animation: bloom 2s ease-in-out infinite alternate;
+}
+
+@keyframes bloom {
+  from { transform: scale(0.95); }
+  to { transform: scale(1.1); }
+}
+
+/* Different flower colors */
+.f1 {
+  top: 0; left: 40px;
+  background: radial-gradient(circle, #ff69b4 30%, #ff1493 80%);
+}
+.f2 {
+  top: 10px; left: 0;
+  background: radial-gradient(circle, #ffb6c1 30%, #ff1493 80%);
+}
+.f3 {
+  top: 10px; right: 0;
+  background: radial-gradient(circle, #ff4500 30%, #ff6347 80%);
+}
+.f4 {
+  top: 40px; left: 20px;
+  background: radial-gradient(circle, #ffd700 30%, #ffa500 80%);
+}
+.f5 {
+  top: 40px; right: 20px;
+  background: radial-gradient(circle, #add8e6 30%, #87cefa 80%);
+}
+
+/* Stem */
+.stem {
+  position: absolute;
+  top: 70px;
+  left: 55px;
+  width: 10px;
+  height: 130px;
+  background: linear-gradient(to bottom, #228b22, #006400);
+  border-radius: 5px;
+  z-index: -1;
+}
+
+/* Leaves */
+.leaf {
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  background: #228b22;
+  border-radius: 10px;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.leaf1 {
+  top: 90px;
+  left: 40px;
+  transform: rotate(30deg);
+}
+
+.leaf2 {
+  top: 90px;
+  left: 60px;
+  transform: rotate(-30deg);
+}
+
+/* Wrap */
+.wrap {
+  position: absolute;
+  top: 100px;
+  left: 25px;
+  width: 70px;
+  height: 100px;
+  background: rgba(255, 182, 193, 0.9);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  opacity: 0.9;
+}
+
+/* Heart Animation Container */
+.heart-animation-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 20px auto;
+}
+
+/* Big Heart with Beating Animation */
+.big-heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 110px;
+  background-color: red;
+  transform: translate(-50%, -50%);
+  animation: heartbeat 1.5s infinite ease-in-out;
+  clip-path: path("M60 15 C60 0, 0 0, 0 37.5 C0 75, 60 105, 60 105 C60 105, 120 75, 120 37.5 C120 0, 60 0, 60 15 Z");
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  25% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  75% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+/* Little Hearts Container */
+.little-hearts-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  pointer-events: none;
+}
+
+/* Little Heart Shape and Animation */
+.little-heart {
+  position: absolute;
+  width: 20px;
+  height: 18px;
+  background-color: pink;
+  transform: rotate(0deg);
+  animation: float-heart 3s ease-in-out infinite;
+  clip-path: path("M10 3 C10 -2, 0 -2, 0 5 C0 12, 10 18, 10 18 C10 18, 20 12, 20 5 C20 -2, 10 -2, 10 3 Z");
+}
+
+.lh1 {
+  top: 10%; left: 10%;
+  background-color: #c97380;
+  animation-delay: 0s;
+}
+.lh2 {
+  top: 20%; left: 80%;
+  background-color: #ff69b4;
+  animation-delay: 0.2s;
+}
+.lh3 {
+  top: 70%; left: 20%;
+  background-color: #6f1433;
+  animation-delay: 0.4s;
+}
+.lh4 {
+  top: 75%; left: 75%;
+  background-color: #f917b5;
+  animation-delay: 0.6s;
+}
+
+@keyframes float-heart {
+  0%, 100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px) scale(1.2) rotate(360deg);
+    opacity: 0.8;
+  }
+}
+.love-letter-animation {
+  text-align: center;
+  margin-top: 30px;
+  position: relative;
+}
+
+.envelope {
+  width: 240px;
+  height: 120px;
+  background: #fff0f5;
+  margin: 50px auto;
+  position: relative;
+  border: 2px solid #ff69b4;
+  border-radius: 6px;
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+  cursor: pointer;
+  perspective: 800px;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: #ffb6c1;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top;
+  transform: rotateX(0deg);
+  transition: transform 1.5s ease;
+  z-index: 2;
+}
+
+.envelope.open .envelope-flap {
+  transform: rotateX(-150deg);
+}
+
+.letter {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  right: 10px;
+  background: white;
+  padding: 5px;
+  border-radius: 4px;
+  color: #c71585;
+  font-size: 15px;
+  font-family: cursive;
+  opacity: 0;
+  transition: opacity 1s ease 1.6s;
+  z-index: 1;
+}
+
+.envelope.open .letter {
+  opacity: 1;
+}
+
+/* Envelope open animation */
+.envelope.open .envelope-flap {
+  transform: rotateX(-150deg);
+}
+
+/* Letter visibility when envelope is open */
+.envelope.open .letter {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.ring-container {
+  position: relative;
+  width: 150px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wedding-ring {
+  width: 60px;
+  height: 60px;
+  border: 6px solid gold;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 0 10px gold;
+  animation: floatRing 4s ease-in-out infinite;
+}
+
+.ring-left {
+  left: 20px;
+  top: 20px;
+  animation-delay: 0s;
+}
+
+.ring-right {
+  left: 60px;
+  top: 20px;
+  animation-delay: 2s;
+}
+
+.diamond {
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(135deg, white, lightblue);
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: 24px;
+  box-shadow: 0 0 10px white, 0 0 5px lightblue;
+}
+
+@keyframes floatRing {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(4deg);
+  }
+}
+

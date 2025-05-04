@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Memories</title>
+  <link rel="stylesheet" href="memories.css" />
+</head>
+<body>
+  <canvas id="ballCanvas"></canvas>
+  
+  <div class="container">
+    <button class="back-button" onclick="window.location.href='index.html'">Back</button>
+
+    <div class="container-1">
+      <div class="button-row">
+        <button class="romantic-button" onclick="updateText(1)">Flower Bouquet</button>
+        <button class="romantic-button" onclick="updateText(2)">Hearts</button>
+        <button class="romantic-button" onclick="updateText(3)">Love Letter</button>
+      </div>
+
+      <div class="text-box" id="textBox">
+        Click a button to display the message here.
+      </div>
+    </div>
+  </div>
+
+  <script src="memories.js"></script>
+</body>
+</html>

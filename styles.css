@@ -1,0 +1,191 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #ffffff;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  
+  .message-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ff1493;
+    font-family: serif;
+    z-index: 1;
+  
+    /* Glowing text */
+    text-shadow:
+      0 0 5px #ff1493,
+      0 0 10px #ff69b4,
+      0 0 20px #ff1493;
+    
+    animation: glowPulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes glowPulse {
+    0% {
+      text-shadow:
+        0 0 5px #ff1493,
+        0 0 10px #ff69b4,
+        0 0 20px #ff1493;
+    }
+    50% {
+      text-shadow:
+        0 0 10px #ff1493,
+        0 0 20px #ff69b4,
+        0 0 30px #ff1493;
+    }
+    100% {
+      text-shadow:
+        0 0 5px #ff1493,
+        0 0 10px #ff69b4,
+        0 0 20px #ff1493;
+    }
+  }
+  
+  
+  .message-container.show {
+    opacity: 1;
+  }
+  
+  .tracking-in-expand {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+	-webkit-animation: tracking-in-expand 5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand 5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+ }
+
+
+ @-webkit-keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .romantic-button {
+    position: relative;
+    padding: 12px 25px;
+    font-size: 1rem;
+    color: white; /* Default text color */
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease, color 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4);
+    -webkit-animation: romantic-button 7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: romantic-button 7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+
+
+@-webkit-keyframes romantic-button {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes romantic-button {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  
+  /* Hover Effects */
+  .romantic-button:hover {
+    box-shadow: 0 0 20px #ff1493, 0 0 40px #ff69b4;
+    transform: scale(1.05);
+    color: #fffacd; /* New text color on hover */
+  }
+  
+  /* Gradient Shine */
+  .romantic-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(255,255,255,0));
+    transform: skewX(-20deg);
+    transition: left 0.75s ease;
+    pointer-events: none;
+  }
+  
+  .romantic-button:hover::before {
+    left: 150%;
+  }
+  
+  /* Heart Pulse on Click */
+  @keyframes pulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.08); }
+    100% { transform: scale(1); }
+  }
+  
+  .romantic-button:active {
+    animation: pulse 0.5s ease-in-out;
+  }
+  
+  .romantic-button:hover::after {
+    bottom: 30px;
+    opacity: 1;
+  }
+  
+  

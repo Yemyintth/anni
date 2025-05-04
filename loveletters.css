@@ -1,0 +1,165 @@
+/* Memory frame styles */
+.memory-frame {
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Back Button */
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease, color 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4);
+    animation: back-button 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  
+  @keyframes back-button {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Hover Effects */
+  .back-button:hover {
+    box-shadow: 0 0 20px #ff1493, 0 0 40px #ff69b4;
+    transform: scale(1.05);
+    color: #fffacd;
+  }
+
+  /* Gradient Shine */
+  .back-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(255,255,255,0));
+    transform: skewX(-20deg);
+    transition: left 0.75s ease;
+    pointer-events: none;
+  }
+  
+  .back-button:hover::before {
+    left: 150%;
+  }
+  
+  /* Heart Pulse on Click */
+  @keyframes pulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.08); }
+    100% { transform: scale(1); }
+  }
+  
+  .back-button:active {
+    animation: pulse 0.5s ease-in-out;
+  }
+  
+  .back-button:hover::after {
+    bottom: 30px;
+    opacity: 1;
+  }
+  
+  /* Glass Box */
+  .glass-box {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    color: #151414;
+    font-family: 'Courier New', monospace;
+    text-align: left;
+    overflow-y: auto;
+    z-index: 999;
+    animation: glass-box 5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  }
+  
+  @keyframes glass-box {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  /* Typing Effect for Each Line */
+  .typing-line {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid white;
+    font-size: 1.1rem;
+    width: 0;
+    margin: 10px 0;
+    animation: typing 4s steps(40, end) forwards, blink 0.5s step-end infinite;
+    display: inline-block;
+  }
+  
+  /* Delays for typing */
+  .typing-line:nth-child(1) { animation-delay: 4s; }
+  .typing-line:nth-child(2) { animation-delay: 8s; }
+  .typing-line:nth-child(3) { animation-delay: 12s; }
+  .typing-line:nth-child(4) { animation-delay: 16s; }
+  .typing-line:nth-child(5) { animation-delay: 20s; }
+  .typing-line:nth-child(6) { animation-delay: 24s; }
+  .typing-line:nth-child(7) { animation-delay: 28s; }
+  .typing-line:nth-child(8) { animation-delay: 32s; }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  @keyframes blink {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: white; }
+  }
+  
+  /* Responsive Tweaks */
+  @media (max-width: 768px) {
+    .glass-box {
+      width: 95%;
+      height: auto;
+      max-height: 85vh;
+      padding: 15px;
+      font-size: 1rem;
+    }
+  
+    .back-button {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  
+    .typing-line {
+      font-size: 1rem;
+    }
+  }
+  
